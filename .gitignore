@@ -1,0 +1,9 @@
+.DS_Store
+Thumbs.db
+
+# Internal project docs — not part of the published site
+context.md
+prd.md
+srd.md
+project_context_history.md
+*.pdf
