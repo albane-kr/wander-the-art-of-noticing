@@ -46,6 +46,10 @@
         <p class="hero__sub fade-in" style="--delay: 0.2s">A screen&#8209;free companion for personalized intentional walks</p>
         <a href="#how-it-works" class="hero__cta fade-in" style="--delay: 0.4s">Learn how it works ↓</a>
       </div>
+
+      <div class="hero__product">
+        <img src="public/images/wander-slate.png" alt="Wandering slate illustration" width="80%" height="80%"/>
+      </div>
     </section>
 
     <!-- ================================================
@@ -83,21 +87,8 @@
           <p class="fade-in" style="--delay: 0.2s">You don't need an app or a subscription. Only a small weight in your palm, and a walk that becomes more present with each step.</p>
           <p class="fade-in" style="--delay: 0.2s">Each session is shaped by your surroundings. Wander suggests observations that make sense for your unique experience — the presence of trees, the rhythm of a street. It never asks you to notice waves when there are none.</p>
         </div>
-        <div class="solution__visual fade-in" style="--delay: 0.15s" aria-hidden="true">
-          <svg class="pebble" viewBox="0 0 200 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <filter id="pebble-grain" x="-5%" y="-5%" width="110%" height="110%">
-                <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" result="noise"/>
-                <feColorMatrix type="saturate" values="0" in="noise" result="grayNoise"/>
-                <feComposite in="grayNoise" in2="SourceGraphic" operator="in" result="masked"/>
-                <feBlend in="SourceGraphic" in2="masked" mode="multiply"/>
-              </filter>
-              <clipPath id="pebble-clip">
-                <path d="M105 15 C145 20 185 65 188 125 C191 185 155 248 100 252 C45 256 12 205 10 145 C8 85 45 25 80 14 C90 11 97 14 105 15 Z"/>
-              </clipPath>
-            </defs>
-            <path d="M105 15 C145 20 185 65 188 125 C191 185 155 248 100 252 C45 256 12 205 10 145 C8 85 45 25 80 14 C90 11 97 14 105 15 Z" fill="#BF7251" filter="url(#pebble-grain)"/>
-          </svg>
+        <div class="solution__visual fade-in" style="--delay: 0.15s">
+          <img src="public/images/wander-in-hand.png" alt="Illustration of a hand holding the Wander device" width="100%" height="100%"/>
         </div>
       </div>
     </section>

@@ -266,6 +266,7 @@ p { max-width: 65ch; }
   align-items: center;
   position: relative;
   overflow: hidden;
+  gap: 2rem;
 }
 
 /* Grain texture overlay */
@@ -292,13 +293,14 @@ p { max-width: 65ch; }
 .hero__content {
   position: relative;
   z-index: 1;
+  flex: 1;
   width: 100%;
   max-width: var(--max-w);
-  margin: 0 auto;
-  padding: calc(var(--pad-v) + 4rem) var(--pad-h) var(--pad-v);
+  margin-left: 6rem;
+  padding: calc(var(--pad-v) + 2rem) var(--pad-h) var(--pad-v);
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
+  gap: 1.5rem;
   align-items: flex-start;
 }
 
@@ -338,6 +340,54 @@ p { max-width: 65ch; }
 .hero__cta:focus-visible {
   color: var(--sage);
   outline: none;
+}
+
+.hero__product {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-right: 6rem;
+  padding-top: calc(var(--h1));
+  opacity: 0;
+  animation: fadeIn 1s var(--ease) 0.6s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding-top: 20%;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .hero__content {
+    margin-left: 0;
+    padding: var(--pad-v) var(--pad-h);
+    width: 100%;
+  }
+
+  .hero__sub {
+    max-width: 100%;
+  }
+
+  .hero__product {
+    width: 100%;
+    padding-top: 0;
+    display: flex;
+    margin-left: 20%;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+  }
 }
 
 /* 8. Problem
@@ -434,17 +484,7 @@ p { max-width: 65ch; }
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.pebble {
-  width: min(160px, 42vw);
-  height: auto;
-  filter: drop-shadow(0 12px 40px rgba(43, 43, 40, 0.12));
   transition: transform 0.6s var(--ease);
-}
-
-.pebble:hover {
-  transform: rotate(-4deg) scale(1.03);
 }
 
 @media (min-width: 768px) {
@@ -452,7 +492,6 @@ p { max-width: 65ch; }
     grid-template-columns: 1fr 1fr;
     gap: 6rem;
   }
-  .pebble { width: 200px; }
 }
 
 /* 10. Video
