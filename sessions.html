@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse and download guided walking sessions for your Wander device.">
+  <title>Sessions — Wander</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/sessions.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__wordmark" aria-label="Wander — return to home">
+        <svg class="logo__mark" viewBox="0 0 62 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse cx="31" cy="22" rx="27" ry="19" fill="#6D836E" transform="rotate(-5 31 22)"/>
+          <circle cx="31" cy="22" r="5.5" fill="white"/>
+        </svg>
+        <span class="logo__text">Wander</span>
+      </a>
+      <div class="nav__links">
+        <a href="sessions.html" class="nav__link nav__link--active" aria-current="page">Sessions</a>
+        <a href="index.html#contact" class="nav__cta">Get in touch</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- ================================================
+         HERO
+         ================================================ -->
+    <section class="s-hero" aria-labelledby="s-hero-heading">
+      <div class="section-container s-hero__inner">
+        <h1 id="s-hero-heading" class="s-hero__headline fade-in">Walks shaped by<br>the world around you.</h1>
+        <p class="s-hero__sub fade-in" style="--delay: 0.2s">Explore guided sessions designed for different environments.</p>
+      </div>
+    </section>
+
+    <!-- ================================================
+         FILTER BAR
+         ================================================ -->
+    <div class="s-filters" role="group" aria-label="Filter sessions by environment">
+      <div class="s-filters__inner">
+        <span class="s-filters__label" aria-hidden="true">Filter by environment</span>
+        <div class="s-filters__chips">
+          <button class="s-chip" data-filter="park"        aria-pressed="false">Park</button>
+          <button class="s-chip" data-filter="city"        aria-pressed="false">City</button>
+          <button class="s-chip" data-filter="forest"      aria-pressed="false">Forest</button>
+          <button class="s-chip" data-filter="seaside"     aria-pressed="false">Seaside</button>
+          <button class="s-chip" data-filter="lake"        aria-pressed="false">Lake</button>
+          <button class="s-chip" data-filter="riverside"   aria-pressed="false">Riverside</button>
+          <button class="s-chip" data-filter="countryside" aria-pressed="false">Countryside</button>
+          <button class="s-chip" data-filter="mixed"       aria-pressed="false">Mixed</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================
+         SESSIONS GRID
+         ================================================ -->
+    <section id="sessions" class="s-grid-section" aria-labelledby="s-grid-label" aria-live="polite">
+      <div class="section-container">
+        <h2 id="s-grid-label" class="sr-only">Sessions</h2>
+        <p class="s-empty" hidden>No sessions match these filters.<br>Try selecting fewer environments.</p>
+        <div class="s-grid">
+
+          <article class="s-card" data-envs="city">
+            <div class="s-card__body">
+              <div class="s-card__tags">
+                <span class="s-tag">City</span>
+                <span class="s-tag s-tag--theme">Light</span>
+              </div>
+              <h3 class="s-card__title">Light on stone</h3>
+              <p class="s-card__duration">15 minutes</p>
+              <p class="s-card__desc">A quiet walk through city streets, noticing how light moves across surfaces.</p>
+            </div>
+            <div class="s-card__foot">
+              <button class="s-download"
+                data-title="Light on stone"
+                data-env="City"
+                data-duration="15 minutes"
+                data-desc="A gentle session that guides your attention toward the way light touches buildings, pavement, and passing objects. A walk for noticing small shifts in brightness and shadow."
+                data-notices="Reflections on windows|Light on textured surfaces|Movement of shadows">
+                Download session
+              </button>
+            </div>
+          </article>
+
+          <article class="s-card" data-envs="park">
+            <div class="s-card__body">
+              <div class="s-card__tags">
+                <span class="s-tag">Park</span>
+                <span class="s-tag s-tag--theme">Sound</span>
+              </div>
+              <h3 class="s-card__title">Morning in the park</h3>
+              <p class="s-card__duration">12 minutes</p>
+              <p class="s-card__desc">Settle into a green space and let your senses follow what's already moving.</p>
+            </div>
+            <div class="s-card__foot">
+              <button class="s-download"
+                data-title="Morning in the park"
+                data-env="Park"
+                data-duration="12 minutes"
+                data-desc="A gentle morning session for arriving in a green space with slow attention. Let sound and light lead your noticing."
+                data-notices="Dew on grass|Early birdsong|The weight of shade">
+                Download session
+              </button>
+            </div>
+          </article>
+
+          <article class="s-card" data-envs="forest">
+            <div class="s-card__body">
+              <div class="s-card__tags">
+                <span class="s-tag">Forest</span>
+                <span class="s-tag s-tag--theme">Texture</span>
+              </div>
+              <h3 class="s-card__title">Forest threshold</h3>
+              <p class="s-card__duration">20 minutes</p>
+              <p class="s-card__desc">A walk that begins at the edge of trees and slows with each step inward.</p>
+            </div>
+            <div class="s-card__foot">
+              <button class="s-download"
+                data-title="Forest threshold"
+                data-env="Forest"
+                data-duration="20 minutes"
+                data-desc="A session for entering forested spaces with deliberate attention. Bark, root, and filtered light guide the way."
+                data-notices="Bark and root underfoot|The shift in temperature|Filtered light through canopy">
+                Download session
+              </button>
+            </div>
+          </article>
+
+          <article class="s-card" data-envs="riverside">
+            <div class="s-card__body">
+              <div class="s-card__tags">
+                <span class="s-tag">Riverside</span>
+                <span class="s-tag s-tag--theme">Movement</span>
+              </div>
+              <h3 class="s-card__title">Riverside attention</h3>
+              <p class="s-card__duration">12 minutes</p>
+              <p class="s-card__desc">Follow the rhythm of water and let movement guide your noticing.</p>
+            </div>
+            <div class="s-card__foot">
+              <button class="s-download"
+                data-title="Riverside attention"
+                data-env="Riverside"
+                data-duration="12 minutes"
+                data-desc="A short session for walking alongside moving water. Let the current set the pace of your attention."
+                data-notices="Water surface and ripple|Reflections shifting|The sound beneath the flow">
+                Download session
+              </button>
+            </div>
+          </article>
+
+          <article class="s-card" data-envs="seaside">
+            <div class="s-card__body">
+              <div class="s-card__tags">
+                <span class="s-tag">Seaside</span>
+                <span class="s-tag s-tag--theme">Temperature</span>
+              </div>
+              <h3 class="s-card__title">Seaside grounding</h3>
+              <p class="s-card__duration">20 minutes</p>
+              <p class="s-card__desc">An extended walk for tuning in to the edge where land and water meet.</p>
+            </div>
+            <div class="s-card__foot">
+              <button class="s-download"
+                data-title="Seaside grounding"
+                data-env="Seaside"
+                data-duration="20 minutes"
+                data-desc="A longer session for coastal environments. Let the scale of the sea slow your attention to what's close."
+                data-notices="Sand and stone underfoot|The horizon line|Wind direction and temperature">
+                Download session
+              </button>
+            </div>
+          </article>
+
+          <article class="s-card" data-envs="city park mixed">
+            <div class="s-card__body">
+              <div class="s-card__tags">
+                <span class="s-tag">City</span>
+                <span class="s-tag">Park</span>
+                <span class="s-tag s-tag--theme">Mixed</span>
+              </div>
+              <h3 class="s-card__title">City and park</h3>
+              <p class="s-card__duration">18 minutes</p>
+              <p class="s-card__desc">A session that moves between street and green, noticing the contrast between them.</p>
+            </div>
+            <div class="s-card__foot">
+              <button class="s-download"
+                data-title="City and park"
+                data-env="City · Park · Mixed"
+                data-duration="18 minutes"
+                data-desc="A session for routes that pass through different kinds of space. Notice how the world changes as you move between them."
+                data-notices="The moment the noise softens|Surfaces changing underfoot|Light opening into open space">
+                Download session
+              </button>
+            </div>
+          </article>
+
+          <article class="s-card" data-envs="lake">
+            <div class="s-card__body">
+              <div class="s-card__tags">
+                <span class="s-tag">Lake</span>
+                <span class="s-tag s-tag--theme">Light</span>
+              </div>
+              <h3 class="s-card__title">Still water</h3>
+              <p class="s-card__duration">10 minutes</p>
+              <p class="s-card__desc">A short session around still water. For noticing what reflects and what does not.</p>
+            </div>
+            <div class="s-card__foot">
+              <button class="s-download"
+                data-title="Still water"
+                data-env="Lake"
+                data-duration="10 minutes"
+                data-desc="A micro-session for lakeside environments. Practice the particular attention that still water invites."
+                data-notices="Still surface and reflection|Distant trees mirrored|The absence of wind">
+                Download session
+              </button>
+            </div>
+          </article>
+
+          <article class="s-card" data-envs="countryside">
+            <div class="s-card__body">
+              <div class="s-card__tags">
+                <span class="s-tag">Countryside</span>
+                <span class="s-tag s-tag--theme">Movement</span>
+              </div>
+              <h3 class="s-card__title">Countryside path</h3>
+              <p class="s-card__duration">12 minutes</p>
+              <p class="s-card__desc">Open land, slow walking, and the particular quiet of being far from the city.</p>
+            </div>
+            <div class="s-card__foot">
+              <button class="s-download"
+                data-title="Countryside path"
+                data-env="Countryside"
+                data-duration="12 minutes"
+                data-desc="A standard session for open rural landscapes. No destination required. Let the path and the field hold your attention."
+                data-notices="Sky and wide field|Ground texture changing|Distant sounds and movement">
+                Download session
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================
+         FOOTER CTA
+         ================================================ -->
+    <section class="s-fcta" aria-labelledby="s-fcta-heading">
+      <div class="section-container s-fcta__inner">
+        <h2 id="s-fcta-heading" class="s-fcta__headline fade-in">Walk with us.</h2>
+        <p class="s-fcta__sub fade-in" style="--delay: 0.1s">New sessions are added regularly.</p>
+        <a href="index.html#contact" class="s-fcta__link fade-in" style="--delay: 0.2s">Get in touch ↓</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <span>&#169; 2026 Wander</span>
+      <span class="footer__tagline">the art of noticing</span>
+    </div>
+  </footer>
+
+  <!-- ================================================
+       SESSION DETAIL MODAL
+       ================================================ -->
+  <div class="s-modal" id="session-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="s-modal__backdrop"></div>
+    <div class="s-modal__panel">
+      <button class="s-modal__close" aria-label="Close session detail">&#x2715;</button>
+      <p class="s-modal__env" id="modal-env"></p>
+      <h2 class="s-modal__title" id="modal-title"></h2>
+      <p class="s-modal__duration" id="modal-duration"></p>
+      <p class="s-modal__desc" id="modal-desc"></p>
+      <div class="s-modal__notices">
+        <h3 class="s-modal__notices-label">What you'll notice</h3>
+        <ul class="s-modal__notices-list" id="modal-notices"></ul>
+      </div>
+      <button class="s-modal__download" id="modal-download">Download to Wander</button>
+      <p class="s-modal__confirm" id="modal-confirm" hidden>
+        Your session is downloading.
+        <span>Transfer it to your Wander device using the companion tool. Enjoy your walk.</span>
+      </p>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/sessions.js"></script>
+</body>
+</html>

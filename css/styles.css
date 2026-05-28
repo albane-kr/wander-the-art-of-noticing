@@ -195,6 +195,33 @@ p { max-width: 65ch; }
   line-height: 1;
 }
 
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav__link {
+  font-family: var(--font-body);
+  font-size: var(--label);
+  font-weight: 500;
+  color: var(--slate);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.nav__link:hover,
+.nav__link:focus-visible {
+  color: var(--sage);
+  outline: none;
+}
+
+.nav__link--active {
+  color: var(--sage);
+}
+
 .nav__cta {
   font-family: var(--font-body);
   font-size: var(--label);
