@@ -55,6 +55,15 @@ function openModal(btn) {
     .split('|')
     .map(n => `<li>${n}</li>`)
     .join('');
+
+  if (btn.dataset.sessionFile) {
+    modalDownload.dataset.sessionFile = btn.dataset.sessionFile;
+    modalDownload.dataset.title = btn.dataset.title;
+  } else {
+    delete modalDownload.dataset.sessionFile;
+    delete modalDownload.dataset.title;
+  }
+
   modalDownload.hidden = false;
   modalConfirm.hidden  = true;
   modal.hidden = false;
@@ -71,6 +80,18 @@ function closeModal() {
 document.querySelectorAll('.s-download').forEach(btn => {
   btn.addEventListener('click', () => openModal(btn));
 });
+
+if (modalDownload) {
+  modalDownload.addEventListener('click', event => {
+    const sessionFile = modalDownload.dataset.sessionFile;
+    if (sessionFile) {
+      event.preventDefault();
+      downloadSessionFile(sessionFile, modalDownload.dataset.title || 'session');
+    }
+    modalDownload.hidden = true;
+    modalConfirm.hidden  = false;
+  });
+}
 
 closeBtn.addEventListener('click', closeModal);
 backdrop.addEventListener('click', closeModal);
@@ -97,3 +118,29 @@ modalDownload.addEventListener('click', () => {
   modalDownload.hidden = true;
   modalConfirm.hidden  = false;
 });
+
+async function downloadSessionFile(url, title) {
+  const filename = `${title.replace(/[^a-z0-9\-_. ]+/gi, '_')}.mp3`;
+
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error('Network response was not ok');
+    const blob = await response.blob();
+    const objectUrl = URL.createObjectURL(blob);
+    triggerDownload(objectUrl, filename);
+    URL.revokeObjectURL(objectUrl);
+  } catch (error) {
+    triggerDownload(url, filename);
+  }
+}
+
+function triggerDownload(href, filename) {
+  const anchor = document.createElement('a');
+  anchor.href = href;
+  anchor.download = filename;
+  anchor.target = '_blank';
+  anchor.rel = 'noopener';
+  document.body.appendChild(anchor);
+  anchor.click();
+  document.body.removeChild(anchor);
+}
